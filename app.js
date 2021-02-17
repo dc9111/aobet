@@ -86,7 +86,7 @@ axios.get('https://api.the-odds-api.com/v3/odds', {
     console.log(maxHome);
     console.log(maxAway);
 
-    //console.log(twoWayHedge(100,maxHome,maxAway));
+    // console.log(twoWayHedge(100,maxHome,maxAway));
 
 
     odds1 = []
