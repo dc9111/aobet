@@ -52,6 +52,7 @@ const sports = [
     'soccer_france_ligue_one',
     'soccer_germany_bundesliga',
     'soccer_italy_serie_a',
+    'soccer_italy_serie_b',
     'soccer_spain_la_liga',
     'soccer_uefa_champs_league',
     'soccer_uefa_europa_league',
@@ -73,7 +74,7 @@ async function getOdds (key) {
 
 sport_key = key
 bet = 10;
-margin = 0.0;
+margin = 0.5;
 
 axios.get('https://api.the-odds-api.com/v3/odds', {
     params: {
