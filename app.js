@@ -1,4 +1,4 @@
-const api_key = '4f242d82bb940b3754ba20d1a3607ac8'
+const api_key = 'ebde11d1657f70ce67584526e45043a3'
 
 const axios = require('axios')
 
@@ -64,7 +64,6 @@ const sports = [
       'onexbet',
       'betclic', 
       'matchbook'
-
     ]
 
   success = 0;  
