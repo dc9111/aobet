@@ -1,5 +1,4 @@
 const api_key = 'ebde11d1657f70ce67584526e45043a3'
-<<<<<<< HEAD:aobet-fe/src/functions/app.js
 
 const axios = require('axios');
 
@@ -18,8 +17,6 @@ class ViableBet {
         this.point = point;
     }
 }
-=======
->>>>>>> d83c9b2e2be3fcbe416d30d805bf204e338e99ad:app.js
 
 const uid = () => {
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
