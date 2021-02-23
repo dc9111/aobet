@@ -12,10 +12,12 @@ class List extends React.Component {
     };
   }
 
-  handleClick() {
-    const viableBets = getBets();
-    this.setState.viableBets = viableBets;
-  }
+ handleClick() {
+    getBets().then(data => {
+      this.setState({viableBets: data})
+  });
+}
+        
 
   renderListItem(){
     return (
@@ -25,11 +27,29 @@ class List extends React.Component {
     )
   }
   render() {
+
+    if (this.state.viableBets.length > 0) {
+      var listedBets = 
+      this.state.viableBets.map(viableBets => <ListItem 
+      key={viableBets.id}
+      date={viableBets.date}
+      team1={viableBets.team1}
+      team2={viableBets.team2}
+      site1={viableBets.site1}
+      site2={viableBets.site2}
+      site3={viableBets.site3}
+      maxHome={viableBets.maxHome}
+      maxAway={viableBets.maxAway}
+      maxDraw={viableBets.maxDraw}
+      point={viableBets.point}
+      
+      />);
+    }
     
     return(
     <div className="List">
       <div>
-        {this.state.viableBets.map(viableBets => <ListItem key={viableBets.id}/>)}
+        {listedBets}
         </div>
         <div>
         <button 
