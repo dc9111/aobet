@@ -5,7 +5,7 @@ const axios = require('axios')
 // An api key is emailed to you when you sign up to a plan
 const api_key = '9064bc32af8847ab9a1f5d1db559fd0f'
 
-sports = [];
+var sports = [];
 
 // Get a list of in season sports
 axios.get('https://api.the-odds-api.com/v3/sports', {
@@ -21,7 +21,7 @@ axios.get('https://api.the-odds-api.com/v3/sports', {
         `Here's the first sport:`
     )
 
-    for (i=0; i<response.data.data.length; i++) {
+    for (let i=0; i<response.data.data.length; i++) {
         sports.push(response.data.data[i].key)
     }
 
