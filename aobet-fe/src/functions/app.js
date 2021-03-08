@@ -74,7 +74,6 @@ const sports = [
     'soccer_spain_segunda_division',
     'soccer_uefa_champs_league',
     'soccer_uefa_europa_league',
-
   ]
 
   const blockedSites = [
@@ -92,7 +91,7 @@ function getOdds (key) {
 
 const sport_key = key
 const bet = 10;
-const margin = 0.5;
+const margin = 0.8;
 
 axios.get('https://api.the-odds-api.com/v3/odds', {
     params: {
