@@ -1,4 +1,4 @@
-const api_key = '5dd102f37b280288e78974b701449133'
+const api_key = '#' //api key required from the-odds-api.com
 
 const axios = require('axios');
 
@@ -74,22 +74,15 @@ const sports = [
     'soccer_spain_segunda_division',
     'soccer_uefa_champs_league',
     'soccer_uefa_europa_league',
-  ]
+  ] // select sports
 
-  const blockedSites = [
-      'betfair',
-      'onexbet',
-      'betclic', 
-      'matchbook'
-    ]
+const blockedSites = []; //insert blocked sites
 
-var viableBets = []
+var viableBets = [];
  
-
-
 function getOdds (key) {
 
-const sport_key = key
+const sport_key = key;
 const bet = 10;
 const margin = 0.8;
 
@@ -102,21 +95,16 @@ axios.get('https://api.the-odds-api.com/v3/odds', {
     }
 }).then(response => {
     
-    
-    //   upcoming events and odds for different bookmakers.
-    // Events are ordered by start time (live events are first)
     console.log(
         `Successfully got ${response.data.data.length} events from ${key}`,
     )
 
-
-    // Check your usage
     console.log()
     console.log('Remaining requests',response.headers['x-requests-remaining'])
     console.log('Used requests',response.headers['x-requests-used'])
 
-    let oddsArr = []
-    let sitesArr = []
+    let oddsArr = [];
+    let sitesArr = [];
 
     for (let j=0; j<response.data.data.length; j++) {
     
@@ -165,11 +153,9 @@ axios.get('https://api.the-odds-api.com/v3/odds', {
         let id = uid()
         let vb = new ViableBet(id, teams[0], teams[1], ct, sitesArr[maxHomeIndex], sitesArr[maxAwayIndex], sitesArr[maxDrawIndex], maxHome, maxAway, maxDraw, point)
 
-        //move if logic up to the bet option, block creation of object if it already exists
+
         var index = viableBets.findIndex(x => x.team1 === vb.team1);
         index === -1 ? viableBets.push(vb) : console.log("bet already exists")
-        // viableBets.push(vb);
-        //constructor(id, team1, team2, date, site1, site2, site3, maxHome, maxAway, maxDraw, point)
 
         }
     
@@ -196,10 +182,3 @@ function getBets() {
 }
 
 getBets();
-
-/*export default async function getBets () {
-    sports.forEach(e => getOdds(e))
-    return viableBets
-    
-}
-*/
