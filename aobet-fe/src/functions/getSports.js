@@ -1,9 +1,7 @@
-
-
 const axios = require('axios')
 
-// An api key is emailed to you when you sign up to a plan
-const api_key = '9064bc32af8847ab9a1f5d1db559fd0f'
+// An api key is required from the-odds-api.com
+const api_key = '#'
 
 var sports = [];
 
